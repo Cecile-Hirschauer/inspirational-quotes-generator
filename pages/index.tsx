@@ -1,6 +1,11 @@
 import Head from 'next/head'
-import {GradientBackgroundCon} from "@/components/QuoteGenerator/QuoteGeneratorElements";
-
+import {
+    GradientBackgroundCon,
+    BackgroundImage1,
+    BackgroundImage2
+} from "@/components/QuoteGenerator/QuoteGeneratorElements";
+import Clouds1 from '../assets/cloud-and-thunder.png';
+import Clouds2 from '../assets/cloudy-weather.png';
 
 export default function Home() {
     return (
@@ -13,7 +18,16 @@ export default function Home() {
             </Head>
                 {/* Background */}
             <GradientBackgroundCon>
-
+                <BackgroundImage1
+                    src={Clouds1}
+                    height={500}
+                    alt="Cloudy background 1"
+                />
+                <BackgroundImage2
+                    src={Clouds2}
+                    height={500}
+                    alt="Cloudy background 2"
+                />
             </GradientBackgroundCon>
         </>
     )
