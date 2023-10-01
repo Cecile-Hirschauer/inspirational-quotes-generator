@@ -2,11 +2,25 @@ import Head from 'next/head'
 import {
     GradientBackgroundContainer,
     BackgroundImage1,
-    BackgroundImage2, FooterContainer, FooterLink, RedSpan
+    BackgroundImage2,
+    FooterContainer,
+    FooterLink,
+    RedSpan,
+    QuoteGeneratorContainer,
+    QuoteGeneratorInnerContainer,
+    QuoteGeneratorTitle, GenerateQuoteButtonText
 } from "@/components/QuoteGenerator/QuoteGeneratorElements";
 import Clouds1 from '../assets/cloud-and-thunder.png';
 import Clouds2 from '../assets/cloudy-weather.png';
-import {useState} from "react";
+import React, {useState} from "react";
+
+function Qotegeneratorsubtitle(props: { children: ReactNode }) {
+    return null;
+}
+
+function QuoteGeneratorButton(props: { children: ReactNode }) {
+    return null;
+}
 
 export default function Home() {
     const [numberOfQuotes, setNumberOfQuotes] = useState<number | null>(0);
@@ -31,6 +45,33 @@ export default function Home() {
                     alt="Cloudy background 2"
                 />
             </GradientBackgroundContainer>
+
+            {/*Quote Generator Modal Pop-up*/}
+            {/* <QuoteGeneratorModal /> */}
+
+            {/* Quote Generator */}
+            <QuoteGeneratorContainer>
+                <QuoteGeneratorInnerContainer>
+                    <QuoteGeneratorTitle>
+                        Daily Inspirational Generator
+                    </QuoteGeneratorTitle>
+                    <Qotegeneratorsubtitle>
+                        Loading for a splash of inspiration ?
+                        Generate a quote cerd with a random provided by
+                        <FooterLink href={'https://zenquotes.io/'}
+                                    target='_blank'
+                                    rel='noopener noreferrer'
+                        >
+                            ZenQuotes API
+                        </FooterLink>
+                    </Qotegeneratorsubtitle>
+                    <QuoteGeneratorButton >
+                        <GenerateQuoteButtonText>
+                            Make a quote
+                        </GenerateQuoteButtonText>
+                    </QuoteGeneratorButton>
+                </QuoteGeneratorInnerContainer>
+            </QuoteGeneratorContainer>
 
             <FooterContainer>
                 <>
