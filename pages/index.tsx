@@ -1,13 +1,15 @@
 import Head from 'next/head'
 import {
-    GradientBackgroundCon,
+    GradientBackgroundContainer,
     BackgroundImage1,
-    BackgroundImage2
+    BackgroundImage2, FooterContainer, FooterLink, RedSpan
 } from "@/components/QuoteGenerator/QuoteGeneratorElements";
 import Clouds1 from '../assets/cloud-and-thunder.png';
 import Clouds2 from '../assets/cloudy-weather.png';
+import {useState} from "react";
 
 export default function Home() {
+    const [numberOfQuotes, setNumberOfQuotes] = useState<number | null>(0);
     return (
         <>
             <Head>
@@ -16,8 +18,8 @@ export default function Home() {
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
-                {/* Background */}
-            <GradientBackgroundCon>
+            {/* Background */}
+            <GradientBackgroundContainer>
                 <BackgroundImage1
                     src={Clouds1}
                     height={500}
@@ -28,7 +30,16 @@ export default function Home() {
                     height={500}
                     alt="Cloudy background 2"
                 />
-            </GradientBackgroundCon>
+            </GradientBackgroundContainer>
+
+            <FooterContainer>
+                <>
+                    Quotes Generated: {numberOfQuotes}
+                    <br/>
+                    Developed with <RedSpan>❤️</RedSpan> by <FooterLink href="https://github.com/Cecile-Hirschauer" target="_blank"
+                                                     rel={"noopener noreferrer"}>Cecile Hirschauer</FooterLink>
+                </>
+            </FooterContainer>
         </>
     )
 }
