@@ -8,19 +8,13 @@ import {
     RedSpan,
     QuoteGeneratorContainer,
     QuoteGeneratorInnerContainer,
-    QuoteGeneratorTitle, GenerateQuoteButtonText
+    QuoteGeneratorTitle, GenerateQuoteButtonText, QuoteGeneratorSubTitle, GenerateQuoteButton
 } from "@/components/QuoteGenerator/QuoteGeneratorElements";
 import Clouds1 from '../assets/cloud-and-thunder.png';
 import Clouds2 from '../assets/cloudy-weather.png';
 import React, {useState} from "react";
 
-function Qotegeneratorsubtitle(props: { children: ReactNode }) {
-    return null;
-}
 
-function QuoteGeneratorButton(props: { children: ReactNode }) {
-    return null;
-}
 
 export default function Home() {
     const [numberOfQuotes, setNumberOfQuotes] = useState<number | null>(0);
@@ -55,21 +49,20 @@ export default function Home() {
                     <QuoteGeneratorTitle>
                         Daily Inspirational Generator
                     </QuoteGeneratorTitle>
-                    <Qotegeneratorsubtitle>
+                    <QuoteGeneratorSubTitle>
                         Loading for a splash of inspiration ?
-                        Generate a quote cerd with a random provided by
-                        <FooterLink href={'https://zenquotes.io/'}
+                        Generate a quote card with a random provided
+                        by <FooterLink href={'https://zenquotes.io/'}
                                     target='_blank'
                                     rel='noopener noreferrer'
-                        >
-                            ZenQuotes API
+                        > ZenQuotes API
                         </FooterLink>
-                    </Qotegeneratorsubtitle>
-                    <QuoteGeneratorButton >
+                    </QuoteGeneratorSubTitle>
+                    <GenerateQuoteButton>
                         <GenerateQuoteButtonText>
                             Make a quote
                         </GenerateQuoteButtonText>
-                    </QuoteGeneratorButton>
+                    </GenerateQuoteButton>
                 </QuoteGeneratorInnerContainer>
             </QuoteGeneratorContainer>
 
@@ -77,8 +70,10 @@ export default function Home() {
                 <>
                     Quotes Generated: {numberOfQuotes}
                     <br/>
-                    Developed with <RedSpan>❤️</RedSpan> by <FooterLink href="https://github.com/Cecile-Hirschauer" target="_blank"
-                                                     rel={"noopener noreferrer"}>Cecile Hirschauer</FooterLink>
+                    Developed with <RedSpan>❤️</RedSpan> by <FooterLink href="https://github.com/Cecile-Hirschauer"
+                                                                        target="_blank"
+                                                                        rel={"noopener noreferrer"}>Cecile
+                    Hirschauer</FooterLink>
                 </>
             </FooterContainer>
         </>
